@@ -142,12 +142,12 @@ Usando o Google ou outra plataforma de pesquisa, procure online por um conjunto 
 
 Um exemplo de conjunto de dados encontrado que pode ter encontrado é:
 
-- [soil moisture datase](https://data.mendeley.com/datasets/m6j79zjyd7/1)
+- [soil moisture database](https://data.mendeley.com/datasets/m6j79zjyd7/1)
 
 ### Questão Q3:
 **Q3. Com base nos metadados, consegue dizer:**
 - **qual a descrição do conjunto de dados;**
-- **qual a proviniência (quem gerou os dados;**
+- **qual a proveniência (quem gerou os dados);**
 - **qual a licença dos dados.**
 
 
