@@ -137,7 +137,21 @@ Usando o Google ou outra plataforma de pesquisa, procure online por um conjunto 
 ### Questão Q2:
 **Q2. Ao pesquisar online por conjuntos de dados IoT de parâmetros do solo, por exempl, humidade, que princípio FAIR dos dados está a utilizar, para os encontrar? Esse princípio está a ser aplicado sobre os dados, ou metadados?**
 
-## 2.3. Gerar uma tabela com simulação de ausência de dados
+
+## 2.3. Analizar os metadados do conjunto de dados encontrado
+
+Um exemplo de conjunto de dados encontrado que pode ter encontrado é:
+
+- [soil moisture datase](https://data.mendeley.com/datasets/m6j79zjyd7/1)
+
+### Questão Q3:
+**Q3. Com base nos metadados, consegue dizer:**
+- **qual a descrição do conjunto de dados;**
+- **qual a proviniência (quem gerou os dados;**
+- **qual a licença dos dados.**
+
+
+## 2.4. Gerar uma tabela com simulação de ausência de dados
 
 Iremos fazer uma cópia da tabela de dados gerada, e remover valores para simular
 lacunas de dados. Pode fazer-se isso, por exemplo, com a seguinte prompt:
@@ -147,12 +161,12 @@ numa taxa entre 5 e 15%.
 ```
 Note que as tabelas têm nomes diferentes.
 
-### Questão Q3:
-**Q3. Pode alterar a prompt para obter outros resultados, ou então editar 
+### Questão Q4:
+**Q4. Pode alterar a prompt para obter outros resultados, ou então editar 
 o cógigo gerado.**
 
 
-## 2.4 Calcular estatísticos básicos
+## 2.5 Calcular estatísticos básicos
 
 Para gerar o código para calcular estatísticos básicos de cada uma das tabelas,
  use por exemplo, a seguinte prompt em Gemini:
@@ -161,15 +175,15 @@ Para gerar o código para calcular estatísticos básicos de cada uma das tabela
 Cálcule os estatísticos básicos para cada um dos dois dataframes, e compare-os.
 ```
 
-### Questão Q4:
-**Q4. Analisar o código gerado, e a célula de output gerada.**
+### Questão Q5:
+**Q5. Analisar o código gerado, e a célula de output gerada.**
 
 Para vizualizar o impacto das ausências de valores, pode perguntar como gerar gráficos:
 ```
 Como posso visualizar a distribuição dos dados ausentes?
 ```
 
-## 2.5. Aplicar métodos de preenchimento de lacunas de dados
+## 2.6. Aplicar métodos de preenchimento de lacunas de dados
 
 Podemos pedir ao Gemini para gerar código que aplique diferentes métodos de 
 preenchimento de lacunas de dados. Na prompt seguinte, os métodos são propostos
@@ -180,21 +194,21 @@ Para o dataframe que contem lacunas de dados, aplica 4 diferentes métodos de pr
 dados ausentes, desde os mais simples aos mais complexos.
 
 ```
-### Questão Q5:
-**Q5. Analisar o código gerado, e a célula de output gerada.**
+### Questão Q6:
+**Q6. Analisar o código gerado, e a célula de output gerada.**
 
-## 2.6. Comparação entre os vários métodos de preenchimento de lacunas de dados
+## 2.7. Comparação entre os vários métodos de preenchimento de lacunas de dados
 
 Para verificar qe melhor método resolve o problema de lacunas de dados, podemos 
 pedir uma comparação da performance.
 ```
 Compare a performance dos diferentes métodos de preenchimento de lacunas de dados.
 ```
-### Questão Q6:
-**Q6. Consegue dizer que método tem melhor performance**
+### Questão Q7:
+**Q7. Consegue dizer que método tem melhor performance**
 
 
-## 2.7. Gerar outputs gráficos para facilitar a comparação
+## 2.8. Gerar outputs gráficos para facilitar a comparação
 
 Para geral gráficos, podemos fazer o seguinte pedido: 
 
@@ -203,10 +217,10 @@ Para a temperatura e para o pH, gerar um gráfico com os dados originais, e ao
 lado outro com os dados preenchidos, usando o método de melhor performance 
 de cada parâmetro. Assinalar com cor vermelha os valores que foram preenchidos.
 ```
-### Questão Q7:
-**Q7. Gerar os mesmos gráficos para a variável Temperature_50cm.**
+### Questão Q8:
+**Q8. Gerar os mesmos gráficos para a variável Temperature_50cm.**
 
-## 2.8. Gravar o ficheiro de dados
+## 2.9. Gravar o ficheiro de dados
 
 O Google Colab corre sobre um ambiente virtual que é destruido quando se desliga 
 do ambiente. Por isso, para poder reutilizar os dados para mais análises, é 
