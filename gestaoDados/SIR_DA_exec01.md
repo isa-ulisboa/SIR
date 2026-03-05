@@ -4,7 +4,7 @@
 
 # Exercício 1 - simular o preenchimento de lacunas de dados
 
-# 0. Introdução
+# 1. Introdução
 
 O objectivo deste exercício é realizar um *workflow* de análise exploratória de dados
 recorrendo a AI para gerar código python. Neste caso, será utilzada a AI 
@@ -37,16 +37,44 @@ O acesso à ferramenta AI Gemini faz-se clicando no icon <img src="images/icon_g
 De seguida, o notebook contém a **bold** a indicação do que deve ser analisado 
 nos resultados da execução do código gerado. Por exemplo:
 
+### Questão Q1:
 **Q1. Compare o valor das médias entre os métodos.**
 
-Note-se que é possível que o chat com o Gemini não seja arquivado. Por isso, em 
+Crie uma célula de texto no notebook para adicionar a sua resposta. 
+
+Note que é possível que o chat com o Gemini não seja arquivado. Por isso, em 
 cada passo, recomenda-se que o texto da prompt seja adicionado a uma célula 
-markdown, anterior à célula de código que foi gerada a partir desta, com uma nota
+de texto, anterior à célula de código que foi gerada a partir desta, com uma nota
 explicativa do que se pretende fazer. 
 
 São também adicionados blocos de texto com explicação ou apontadores externos para mais documentação:
 
 >Para saber mais sobre python, consulte [https://www.python.org/](https://www.python.org/).
+
+
+# 2. Ambiente para realização do exercício
+
+O exercício será realizado com recurso à linguagem de programação ***Python***, mas usando ***Jupyter Notebook***.
+
+O Jupyter Notebook é uma aplicação web de código aberto para criar e partilhar documentos computacionais interativos utilizando diversas linguagens de programação. Utiliza o formato de ficheiro .ipynb, que combina texto (em formato Markdown), código e resultados num único ficheiro. O código pode estar em mais de 40 linguagens diferentes (R, Julia, Scala, etc.), embora neste curso utilizemos Python.
+
+O facto de ser interativo torna-o muito conveniente para o desenvolvimento de análises de ciência de dados. Após a execução, pode exportar o caderno como um relatório em PDF ou HTML.
+
+
+### Estrutura de um Jupyter Notebook
+
+Os Jupyter Notebooks são uma combinação de três tipos de componentes:
+
+- células de código, que contêm código na linguagem selecionada para o kernel;
+- células de texto, que contêm texto em formato Markdown;
+- componentes de saída, que exibem os resultados da execução do código. Podem conter saídas de texto, tabelas, gráficos, imagens, etc.
+
+Podem ser adicionas quantas células quiser ao seu Jupyter Notebook. No momento em que adiciona uma célula, define-a como sendo do tipo código (*code*) ou Markdown (*text*).
+
+Neste exercício, usaremos o serviço Google Collaboratory, que é uma implementação na cloud do Jupyter Notebook. Podemos, desde modo, realizar um exercício usando recursos de infraestrutura na cloud. 
+
+# 3. Realização do exercício
+
 
 # Exercício 1
 
@@ -57,9 +85,9 @@ Um solução para este exercício está disponível em [https://colab.research.g
 Em Google Drive, crie uma nova pasta chamada SIR. Nesta,
 crie um novo Google Colab, com o menu de contexto (botão direito do rato). 
 Para melhor documentar o seu notebook:
-- altere o nome do notebook para `Exerc_01.ipynb`
+- altere o nome do notebook para `SIR_Exerc_01.ipynb`
 - adicione um título numa célula markdown no topo do notebook, por exemplo
-`# Análise exploratória de dados - Parte 1`
+`# Exercício 01 - Análise exploratória de dados`
 
 > Sobre o **Markdown**: É uma linguagem de formatação simples que permite adicionar 
 estilos a texto. Por exemplo, para formatar com itálico, é necessário apenas colocar
@@ -71,7 +99,7 @@ em Jupyter usam Markdown para melhorar a leitura. <br><br>
 
 ## 2. Gerar e analisar uma tabela de dados simulada
 
-### 2.1. Gerar uma tabela de dados simulados
+## 2.1. Gerar uma tabela de dados simulados
 
 Vamos gerar uma tabela que simula parâmetros do solo produzidos por sensores IoT.
 Pretende-se obter dados de temperatura, água, humidade, nutrientes, pH e condutividade
@@ -84,18 +112,31 @@ Gemini:
 
 ```
 Crie um conjunto de dados de dados simulados para um sensor IoT de parâmetros do solo. 
-Os parâmetros são temperatura, humidade, nutrientes, pH e condutividade eléctrica. 
+Os parâmetros são temperatura, humidade do solo, nutrientes (K, N, P), pH e condutividade eléctrica. 
 O sensor deve medir às seguintes profundidades: 20 cm, 40 cm, 60 cm e 100 com. 
 Incluir nos dados simulados as tendências, variações e relações entre parametros 
 que são normalmente observados nestes dados em conjuntos de dados reais. O novo 
-conjunto de dados deve ser um dataframe chamado soil_simulated.
+conjunto de dados deve ser um dataframe chamado soil_simulated. Incluir gráficos de visualização das variáveis geradas.
 ```
 
-Copiar o código gerado para uma célula de código, e executar.
+O Gemini irá perguntar se pretende correr todo o código automaticamente, ou passo a passo. Seleccione `Accept & auto-run`.
 
-**Q1. Analisar o código gerado, e a célula de output gerada.**
+### Questão Q1:
+**Q1. Analisar o código gerado, e as células de output geradas. Consegue 
+encontrar um exemplo de conjunto de dados online sobre um dos parámetros simulados,
+e fazer a comparação com os dados simulados, de modo a perceber se estes têm alguma adesão à realidade?**
 
-### 2.2. Gerar uma tabela com simulação de ausência de dados
+## 2.2. Pesquisar online por dados similares
+
+Será que os dados gerados têm qualquer adesão à realidade? 
+
+Usando o Google ou outra plataforma de pesquisa, procure online por um conjunto de dados reais similar ao que acabou de simular. Concentre-se num parâmetro, por exemplo, humidade do solo (*soil moisture*). Descarregue o conjunto de dados que conseguir encontrar, crie um gráfico em excel para o parâmetro sugerido, e compare com o parâmetro gerado pelo Gemini.
+
+
+### Questão Q2:
+**Q2. Ao pesquisar online por conjuntos de dados IoT de parâmetros do solo, por exempl, humidade, que princípio FAIR dos dados está a utilizar, para os encontrar? Esse princípio está a ser aplicado sobre os dados, ou metadados?**
+
+## 2.3. Gerar uma tabela com simulação de ausência de dados
 
 Iremos fazer uma cópia da tabela de dados gerada, e remover valores para simular
 lacunas de dados. Pode fazer-se isso, por exemplo, com a seguinte prompt:
@@ -105,11 +146,12 @@ numa taxa entre 5 e 15%.
 ```
 Note que as tabelas têm nomes diferentes.
 
-**Q2. Pode alterar a prompt para obter outros resultados, ou então editar 
+### Questão Q3:
+**Q3. Pode alterar a prompt para obter outros resultados, ou então editar 
 o cógigo gerado.**
 
 
-### 2.3. Calcular estatísticos básicos
+## 2.4 Calcular estatísticos básicos
 
 Para gerar o código para calcular estatísticos básicos de cada uma das tabelas,
  use por exemplo, a seguinte prompt em Gemini:
@@ -118,14 +160,15 @@ Para gerar o código para calcular estatísticos básicos de cada uma das tabela
 Cálcule os estatísticos básicos para cada um dos dois dataframes, e compare-os.
 ```
 
-**Q3. Analisar o código gerado, e a célula de output gerada.**
+### Questão Q4:
+**Q4. Analisar o código gerado, e a célula de output gerada.**
 
 Para vizualizar o impacto das ausências de valores, pode perguntar como gerar gráficos:
 ```
 Como posso visualizar a distribuição dos dados ausentes?
 ```
 
-### 2.4. Aplicar métodos de preenchimento de lacunas de dados
+## 2.5. Aplicar métodos de preenchimento de lacunas de dados
 
 Podemos pedir ao Gemini para gerar código que aplique diferentes métodos de 
 preenchimento de lacunas de dados. Na prompt seguinte, os métodos são propostos
@@ -136,20 +179,21 @@ Para o dataframe que contem lacunas de dados, aplica 4 diferentes métodos de pr
 dados ausentes, desde os mais simples aos mais complexos.
 
 ```
-**Q4. Analisar o código gerado, e a célula de output gerada.**
+### Questão Q5:
+**Q5. Analisar o código gerado, e a célula de output gerada.**
 
-### 2.5. Comparação entre os vários métodos de preenchimento de lacunas de dados
+## 2.6. Comparação entre os vários métodos de preenchimento de lacunas de dados
 
 Para verificar qe melhor método resolve o problema de lacunas de dados, podemos 
 pedir uma comparação da performance.
 ```
 Compare a performance dos diferentes métodos de preenchimento de lacunas de dados.
 ```
+### Questão Q6:
+**Q6. Consegue dizer que método tem melhor performance**
 
-**Q5. Consegue dizer que método tem melhor performance**
 
-
-### 2.6. Gerar outputs gráficos para facilitar a comparação
+## 2.7. Gerar outputs gráficos para facilitar a comparação
 
 Para geral gráficos, podemos fazer o seguinte pedido: 
 
@@ -158,9 +202,10 @@ Para a temperatura e para o pH, gerar um gráfico com os dados originais, e ao
 lado outro com os dados preenchidos, usando o método de melhor performance 
 de cada parâmetro. Assinalar com cor vermelha os valores que foram preenchidos.
 ```
-**Q6. Gerar os mesmos gráficos para a variável Temperature_50cm.**
+### Questão Q7:
+**Q7. Gerar os mesmos gráficos para a variável Temperature_50cm.**
 
-### 2.7. Gravar o ficheiro de dados
+## 2.8. Gravar o ficheiro de dados
 
 O Google Colab corre sobre um ambiente virtual que é destruido quando se desliga 
 do ambiente. Por isso, para poder reutilizar os dados para mais análises, é 
