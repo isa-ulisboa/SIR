@@ -71,14 +71,15 @@ Os Jupyter Notebooks são uma combinação de três tipos de componentes:
 
 Podem ser adicionas quantas células quiser ao seu Jupyter Notebook. No momento em que adiciona uma célula, define-a como sendo do tipo código (*code*) ou Markdown (*text*).
 
+Uma nota importante sobre os Notebook é que as células de código têm de ser executadas em sequência. Muitas vezes, os resultados de uma célula são utilizados pelas células seguintes.
+
+
 Neste exercício, usaremos o serviço Google Collaboratory, que é uma implementação na cloud do Jupyter Notebook. Podemos, desde modo, realizar um exercício usando recursos de infraestrutura na cloud. 
 
-# 3. Realização do exercício
+# 3. Realização dos exercícios
 
 
 # Exercício 1
-
-Um solução para este exercício está disponível em [https://colab.research.google.com/drive/1lFUeTGuLGD63_Z59gf05wURYA5JFT522?usp=sharing](https://colab.research.google.com/drive/1lFUeTGuLGD63_Z59gf05wURYA5JFT522?usp=sharing).
 
 ## 1. Gerar um novo notebook Colab
 
@@ -217,7 +218,54 @@ instruções de como o carregar num novo notebook.
 Gravar o dataset dos dados simulados inicialmente no disco local, para usar 
 noutro colab. Explicar como abrir esse dataset no outro colab.
 ```
-## Resumo
+
+## Solução do exercício
+Um solução para este exercício está disponível em [https://colab.research.google.com/drive/1lFUeTGuLGD63_Z59gf05wURYA5JFT522?usp=sharing](https://colab.research.google.com/drive/1lFUeTGuLGD63_Z59gf05wURYA5JFT522?usp=sharing).
+
+
+# Exercício 2
+
+Neste segundo exercício pretende-se aceder a um reposítório de dados, neste caso o [GBIF](https://www.gbif.org),e obter dados de ocorrência d de sobreiro (*Quercus suber*) em Portugal, para os últimos dez anos. Para obter os dados, iremos usar o API (Application Programming Interface) disponibilizado pelo GBIF.
+
+## 1. Gerar um novo notebook Colab
+
+Em Google Drive, crie um novo Google Colab na pasta que criou anteriormente para guardar os exercícios de SIR. Use o menu de contexto (botão direito do rato). 
+Para melhor documentar o seu notebook:
+- altere o nome do notebook para `SIR_Exerc_02.ipynb`
+- adicione um título numa célula markdown no topo do notebook, por exemplo
+
+`# Exercício 02 - Obtenção de dados a partir de um repositório`
+
+## 2. Obter dados de *Quercus suber*
+
+Usando o Gemini embebido no Colab, submeta a prompt abaixo. Neste caso, seleccione a opção "Run step by step", pois será necessário fazer ajustes ao código. A prompt é:
+```
+Cria um exemplo de acesso a dados do GBIF através do API, para a espécie Quercus suber, que inclui a representação de um mapa com as ocorrências em Portugal dos últimos 10 anos.
+```
+
+Deverá obter um mapa com ocorrências de Quercus suber semelhante ao seguinte:
+
+<img src="images/mapa_qsuber.png" alt="drawing" width="600"/>
+
+### Questão Q1:
+**Q1. Quantas ocorrências de *Quercus suber* foram obtidas a partir do GBIF.**
+
+## 3. Obter dados de *Pinus pinea*
+
+Repita o exercício, mas para o pinheiro mando (*Pinus pinea*). Mas neste caso, em vez de gerar código com o Gemini, terá de copiar as células de código geradas anteriormente, e alterar o que for necessário para ajustar para *Pinus pinea*. 
+
+O resultado no mapa deve ser semelhante ao seguinte:
+
+<img src="images/mapa_ppinea.png" alt="drawing" width="600"/>
+
+## Questão Q2:
+**Q2. Quantas ocorrências de *Pinus pinea* foram obtidas a partir do GBIF.**
+
+## Solução do exercício
+Um solução para este exercício está disponível em [https://colab.research.google.com/drive/1UA7lnfqcVFE1_gLuwDrhBm7bO0-cmyw0?usp=sharing](https://colab.research.google.com/drive/1UA7lnfqcVFE1_gLuwDrhBm7bO0-cmyw0?usp=sharing).
+
+
+# Resumo
 
 Neste exercício, utilizámos AI para 
 - gerar dados simulados
